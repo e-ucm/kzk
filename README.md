@@ -36,7 +36,7 @@ Aditional configuration for Zookeeper is established in the [aditionalZoo.cfg](h
 Public Build
 ---
 
-https://hub.docker.com/r/e-ucm/kzk/
+https://hub.docker.com/r/eucm/kzk/
 
 Build from Source
 ---
