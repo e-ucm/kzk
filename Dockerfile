@@ -1,11 +1,15 @@
 # Kafka and Zookeeper
 
-FROM java:openjdk-8-jre
+FROM openjdk:8u141-jre
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV SCALA_VERSION 2.11
-ENV KAFKA_VERSION 0.10.0.1
+ENV KAFKA_VERSION 0.11.0.1
 ENV KAFKA_HOME /opt/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION"
+# Kafka jvm options
+ENV KAFKA_HEAP_OPTS "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
+# Zookeeper jvm options
+ENV SERVER_JVMFLAGS "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
 
 # Install Kafka, Zookeeper and other needed things
 RUN apt-get update && \
